@@ -5,6 +5,9 @@
     <input (change)="selectFile($event)" class="form-control" type="file" id="formFile">
 </div>
 <div class="col d-flex align-items-end">
-    <button (click)="uploadFile()" type="button" class="btn btn-primary ">Feltöltés</button>
+    <button [disabled]="!selectedFile" (click)="uploadFile()" type="button" class="btn btn-primary ">Feltöltés</button>
 </div>
+</div>
+<div  class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width': percentage+'%'}"></div>
 </div>

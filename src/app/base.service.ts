@@ -13,7 +13,10 @@ export class BaseService {
     const filename= '/feltolt/'+file.name
     console.log(filename)
     const storegeRef=this.storage.ref(filename)
-    this.storage.upload(filename, file).snapshotChanges()
+
+    const updateTask=this.storage.upload(filename, file)
+    
+    updateTask.snapshotChanges()
     .subscribe({
       next:(ref:any)=>{
         console.log(ref)
@@ -29,6 +32,7 @@ export class BaseService {
       }
     }
     )
+    return updateTask.percentageChanges()
   }
 
   saveFileData(fileData:any){
