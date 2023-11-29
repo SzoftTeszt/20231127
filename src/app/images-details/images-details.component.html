@@ -1,0 +1,18 @@
+<!-- <p>images-details works!</p>
+{{kepek|json}} -->
+
+<div class="canvas">
+    <div *ngIf="kepek" class="bigimg">
+        <img  [src]="latszikTomb[aktIndex].url">
+    </div>
+    <div class="tape">
+        <div class="littleimgcontainer">
+            <span (click)="balraLep()" class="balra"><</span>
+            <img class="littleimg" 
+            *ngFor="let kep of latszikTomb; let i=index" 
+            (click)="aktIndex=i"
+            [src]="kep.url" [alt]="kep.name">
+            <span (click)="jobbraLep()" class="jobbra">></span>
+        </div>
+    </div>
+</div>

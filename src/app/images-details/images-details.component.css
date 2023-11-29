@@ -1,0 +1,33 @@
+.canvas{
+    width: 300px;
+    overflow: hidden;
+    height:400px;
+}
+.littleimg{
+    width: 100px;
+    height:100px;
+}
+.bigimg{
+    width: 300px;
+    height:300px;
+    overflow: hidden;
+}
+img{
+    max-width: 100%;
+}
+.tape{
+    position: relative;
+}
+
+.balra{
+    position: absolute;
+    left:0;
+    top:45px;
+    background-color: rgba(0,0,0,0.3);
+}
+.jobbra{
+    position: absolute;
+    right:0;
+    top:45px;
+    background-color: rgba(0,0,0,0.3);
+}

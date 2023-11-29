@@ -1,4 +1,7 @@
 <!-- {{kepek|json}} -->
+
+<app-images-details [kepek]="kepek"></app-images-details>
+
 <div *ngFor="let kep of kepek" class="row my-2">
 <div class="col-10">
     <a [href]="kep.url">{{kep.name}}</a>

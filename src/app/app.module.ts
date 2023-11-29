@@ -11,12 +11,14 @@ import { AppComponent } from './app.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 import { FileListComponent } from './file-list/file-list.component';
 import { Environments } from './environments';
+import { ImagesDetailsComponent } from './images-details/images-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UploadFileComponent,
-    FileListComponent
+    FileListComponent,
+    ImagesDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -30,8 +30,14 @@ export class BaseService {
   uploadFile(file:any){
     const filename= '/feltolt/'+file.name
     console.log(filename)
-    const storegeRef=this.storage.ref(filename)
+    const storegeRef=this.storage.ref(filename) 
 
+    //  storegeRef.getDownloadURL().subscribe(
+    //   {
+    //     next:(a)=>{console.log("OK:",a)},
+    //     error:(a)=>{console.log("Errror:",a)}
+    //   }
+    // )
     const updateTask=this.storage.upload(filename, file)
     
     updateTask.snapshotChanges()
@@ -54,6 +60,9 @@ export class BaseService {
   }
 
   saveFileData(fileData:any){
+      
+
+      
       this.db.list('/feltolt/').push(fileData)
   }
 
