@@ -17,6 +17,16 @@ export class BaseService {
     return this.dbRef
   }
 
+  deleteFile(file:any){
+    this.dbRef.remove(file.key).then(
+      ()=>{
+      const filename= '/feltolt/'+file.name
+      const storegeRef=this.storage.ref(filename)
+      storegeRef.delete().subscribe()
+    }
+    )
+  }
+
   uploadFile(file:any){
     const filename= '/feltolt/'+file.name
     console.log(filename)

@@ -1,1 +1,9 @@
-{{kepek|json}}
+<!-- {{kepek|json}} -->
+<div *ngFor="let kep of kepek" class="row my-2">
+<div class="col-10">
+    <a [href]="kep.url">{{kep.name}}</a>
+</div>
+<div class="col-2">
+    <button (click)="torles(kep)" type="button" class="btn btn-primary">Törlés</button>
+</div>
+</div>

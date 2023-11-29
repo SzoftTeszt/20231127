@@ -16,4 +16,7 @@ export class FileListComponent {
       (f)=>this.kepek=f
     )
   }
+  torles(kep:any){
+    this.base.deleteFile(kep)
+  }
 }
