@@ -1,13 +1,21 @@
 import { Injectable } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BaseService {
 
-  constructor(private storage:AngularFireStorage, private db: AngularFireDatabase) { }
+  dbRef:AngularFireList<any>;
+
+  constructor(private storage:AngularFireStorage, private db: AngularFireDatabase) {
+    this.dbRef=this.db.list('/feltolt/')
+   }
+
+  getFileData(){
+    return this.dbRef
+  }
 
   uploadFile(file:any){
     const filename= '/feltolt/'+file.name

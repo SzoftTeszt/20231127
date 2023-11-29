@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BaseService } from '../base.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-file-list',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./file-list.component.css']
 })
 export class FileListComponent {
-
+  kepek:any
+  constructor(private base:BaseService){
+    this.base.getFileData().snapshotChanges().pipe(
+      map(ch=> ch.map(c=>({key:c.key, ...c.payload.val() })) )
+    ).subscribe(
+      (f)=>this.kepek=f
+    )
+  }
 }
